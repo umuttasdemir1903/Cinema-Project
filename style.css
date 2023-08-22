@@ -1,0 +1,109 @@
+:root{
+    /* RENKLER */
+    --background-color : #292929;
+    --seat-color : #444451;
+    --text-color : #777;
+    --reserved-color : #fff;
+    --selected-color : #f6eb6f;
+    --info-background : rgba(0,0,0,0.2);
+
+
+    /* OLUŞUMLAR */
+    --transition:all .5s ease ;
+    /* GÖLGE */
+    --box-shadow: 0 8px 8px rgba(255,255,255,0.7);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
+body{
+    
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* sinema ekranı */
+
+.screen{
+    margin: 20px 0;
+    height: 100px;
+}
+
+.screen img{
+    border-radius: 10px;
+    width: 250px;
+    height: 100%;
+    box-shadow: 0 0 15px white;
+}
+
+.seat.reserved{
+    color: var(--reserved-color);
+}
+
+.seat.selected{
+    color: var(--selected-color);
+}
+
+.seatsRow{
+    display: flex;
+}
+.seat{
+    color: var(--seat-color);
+    font-size: 25px;
+    margin: 5px auto;
+    transition: var(--transition);
+}
+
+.seat:not(.reserved):hover{
+    color: var(--selected-color);
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+.movie-list{
+   margin: 20px 0;
+}
+
+.info{
+    display: flex;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 5px white;
+    color: var(--text-color);
+    background-color: var(--info-background);
+}
+
+.info li{
+    display: flex;
+    align-items: center;
+    margin-right:  20px;
+    gap: 8px;
+}
+
+.infoText{
+    margin: 15px;
+    font-weight: bold;
+    display: none;
+    color: var(--reserved-color);
+}
+
+.infoText.open{
+    display: block;
+}
+
+.infoText span{
+    font-weight: bold;
+    color: var(--selected-color);
+}
