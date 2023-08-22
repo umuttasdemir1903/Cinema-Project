@@ -133,4 +133,5 @@ container.addEventListener("click", (mouseEvent) => {
 
 movie.addEventListener("change", () => {
   calculateTotal();
+
 });
